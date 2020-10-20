@@ -5,8 +5,8 @@ Most functionality is given from the `ln` infix function which mirrors the `to` 
 
 ## Why
 
-idk
-Kotlin's standard library for maps relies heavily on the use of Pair objects, which are usually temporary constructs.
+idk lol.
+Kotlin's standard library for maps relies heavily on the use of Pair objects, which are usually temporary constructs. The standard Pair in Kotlin is an extremely ubiquitous and general purpose construct that can tend to be used everywhere so the idea is a more optimised version of Pair is to be able to use it anywhere guilt-free without worrying about garbage collection stress.
 
 *For example* the code:
 `val mappy = mapOf(1 to 2, 2 to 3, 3 to 4)`
@@ -14,7 +14,7 @@ creates 3 Pair objects holding int primitives that are garbage as soon as the ma
 
 Using Kotlink, the code:
 `val mappy = mapOf(1 ln 2, 2 ln 3, 3 ln 4)`
-avoids declaring any objects, as the integers are packed into primitive longs. The infix ln function returns an inlined implementation of the Link interface which has a few virtual methods defined for practical usability as if it was just a regular Pair object (theoretically, if the kotlin compiler supports it).
+avoids declaring any intermediate objects, as the integers are packed into primitive longs. The infix ln function returns an inlined implementation of the Link interface which has a few virtual methods defined for practical usability as if it was just a regular Pair object (theoretically, if the kotlin compiler supports it).
 
 Link instances are cloneable and have nice toString() output.
 
