@@ -40,6 +40,8 @@ a.range
 (1 to 2) == (2 to 1) // false
 (1 symTo 2) == (2 symTo 1) // true
 ```
+*(Probably more useful than the library itself but)*
+- maff: `(1 ln 4) * 2 == (2, 8)`...
 - Support for floats
 - Some support for even smaller types like byte and short, where 2 bytes get packed into short and 2 shorts get packed into ints etc.
 
